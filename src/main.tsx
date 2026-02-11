@@ -8,5 +8,5 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
     <span style={{ display: 'none' }} data-version={packageJson.version} />
-  </StrictMode>,
+  </StrictMode>
 );

@@ -1,16 +1,14 @@
-import { Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { createBrowserRouter, Outlet } from 'react-router';
 import ROUTE_PATHS from '@/constants/route-paths.ts';
-import { Button } from '@/components/ui/button.tsx';
+import { Skeleton } from '@/components/ui/skeleton.tsx';
 
-const FallbackComponent = () => (
-  <div className="bg-background h-full w-full text-center">Loading...</div>
-);
+const WelcomePage = lazy(() => import('@/pages/welcome'));
 
 const ROUTES = createBrowserRouter([
   {
     element: (
-      <Suspense fallback={<FallbackComponent />}>
+      <Suspense fallback={<Skeleton />}>
         <Outlet />
       </Suspense>
     ),
@@ -18,13 +16,11 @@ const ROUTES = createBrowserRouter([
       {
         path: ROUTE_PATHS.welcome,
         element: (
-          <Suspense key={ROUTE_PATHS.welcome} fallback={<FallbackComponent />}>
-            <div className="flex flex-col items-center justify-between gap-4">
-              <div>Welcome Pago</div>
-              <div>
-                <Button>Click me!</Button>
-              </div>
-            </div>
+          <Suspense
+            key={ROUTE_PATHS.welcome}
+            fallback={<Skeleton className="h-full w-full" />}
+          >
+            <WelcomePage />
           </Suspense>
         ),
       },
@@ -32,7 +28,7 @@ const ROUTES = createBrowserRouter([
   },
   {
     element: (
-      <Suspense fallback={<FallbackComponent />}>
+      <Suspense fallback={<Skeleton className="h-full w-full" />}>
         <Outlet />
       </Suspense>
     ),
@@ -41,7 +37,10 @@ const ROUTES = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense key={ROUTE_PATHS.root} fallback={<FallbackComponent />}>
+          <Suspense
+            key={ROUTE_PATHS.root}
+            fallback={<Skeleton className="h-full w-full" />}
+          >
             <div>Dashboard</div>
           </Suspense>
         ),

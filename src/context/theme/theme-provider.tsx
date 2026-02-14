@@ -21,7 +21,7 @@ export default function ThemeProvider({
     return isTheme(storageValue) ? storageValue : defaultTheme;
   });
 
-  const onThemeChange = (theme: Theme) => {
+  const onThemeChange = (theme: string) => {
     const newTheme = isTheme(theme) ? theme : defaultTheme;
 
     setTheme(newTheme);

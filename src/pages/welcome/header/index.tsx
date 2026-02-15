@@ -1,7 +1,8 @@
 import { Link } from 'react-router';
 import { Settings } from 'lucide-react';
-import ROUTE_PATHS from '@/constants/route-paths.ts';
 import { buttonVariants } from '@/components/ui/button.tsx';
+import ThemeDropdown from '@/components/theme-dropdown';
+import ROUTE_PATHS from '@/constants/route-paths.ts';
 import { cn } from '@/lib/utils.ts';
 
 export default function Header() {
@@ -22,7 +23,9 @@ export default function Header() {
           <span className="hidden md:block">Dashboard</span>
         </Link>
 
-        <div>Profile</div>
+        <div className="flex items-center justify-center">
+          <ThemeDropdown />
+        </div>
       </div>
     </header>
   );

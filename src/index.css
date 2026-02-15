@@ -27,6 +27,7 @@
     --input: oklch(0.922 0 0);
     --ring: oklch(0.708 0 0);
     --radius: 0.625rem;
+    --header: #8ca7ff;
   }
 
   .dark {
@@ -49,6 +50,7 @@
     --border: oklch(0.269 0 0);
     --input: oklch(0.269 0 0);
     --ring: oklch(0.439 0 0);
+    --header: #223172;
   }
 }
 
@@ -59,6 +61,7 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  --color-header: var(--header);
 }
 
 @layer base {

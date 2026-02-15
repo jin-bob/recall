@@ -1,0 +1,21 @@
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .logo-text {
+        font-family: "Brush Script MT", "Segoe Script", cursive;
+        font-size: 120px;
+        fill: white;
+        }
+    </style>
+
+    <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" class="logo-text">
+        Recall
+    </text>
+
+    <path
+            d="M140 150 Q300 180 460 150"
+            stroke="white"
+            stroke-width="6"
+            fill="none"
+            stroke-linecap="round"
+    />
+</svg>

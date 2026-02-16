@@ -1,23 +1,25 @@
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, Outlet } from 'react-router';
-import ROUTE_PATHS from '@/constants/route-paths.ts';
 import { Skeleton } from '@/components/ui/skeleton.tsx';
+import ROUTE_PATHS from '@/constants/route-paths.ts';
+import AUTH_ROUTE_OBJECT from '@/routing/auth-route-object.tsx';
+import ADMIN_ROUTE_OBJECT from '@/routing/admin-route-object.tsx';
 
 const WelcomePage = lazy(() => import('@/pages/welcome'));
 
 const ROUTES = createBrowserRouter([
   {
     element: (
-      <Suspense fallback={<Skeleton />}>
+      <Suspense fallback={<Skeleton className="h-full w-full" />}>
         <Outlet />
       </Suspense>
     ),
     children: [
       {
-        path: ROUTE_PATHS.welcome,
+        path: ROUTE_PATHS.root,
         element: (
           <Suspense
-            key={ROUTE_PATHS.welcome}
+            key={ROUTE_PATHS.root}
             fallback={<Skeleton className="h-full w-full" />}
           >
             <WelcomePage />
@@ -26,27 +28,8 @@ const ROUTES = createBrowserRouter([
       },
     ],
   },
-  {
-    element: (
-      <Suspense fallback={<Skeleton className="h-full w-full" />}>
-        <Outlet />
-      </Suspense>
-    ),
-    handle: { title: () => 'Dashboard' },
-    children: [
-      {
-        index: true,
-        element: (
-          <Suspense
-            key={ROUTE_PATHS.root}
-            fallback={<Skeleton className="h-full w-full" />}
-          >
-            <div>Dashboard</div>
-          </Suspense>
-        ),
-      },
-    ],
-  },
+  AUTH_ROUTE_OBJECT,
+  ADMIN_ROUTE_OBJECT,
 ]);
 
 export default ROUTES;

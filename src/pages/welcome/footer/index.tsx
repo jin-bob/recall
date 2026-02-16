@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="flex gap-2">
         <span>{currentYear}</span>
 
-        <NavLink to={ROUTE_PATHS.root}>Recall</NavLink>
+        <NavLink to={ROUTE_PATHS.admin}>Recall</NavLink>
       </div>
     </footer>
   );

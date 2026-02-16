@@ -1,7 +1,7 @@
 export default function InfoSection() {
   return (
     <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:items-start md:justify-between">
-      <div>
+      <div className="flex-1">
         <h1 className="text-2xl">
           Hi, my name is Eugene, i am Software Developer.
         </h1>

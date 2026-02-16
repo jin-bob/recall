@@ -87,10 +87,10 @@ const PROJECTS_INFO = [
 
 export default function ProjectsSection() {
   return (
-    <div className="w-full space-y-5 text-center">
-      <div>Project experience:</div>
+    <div className="w-full space-y-6 text-center">
+      <div className="text-2xl font-semibold">Projects experience:</div>
 
-      <div className="flex w-full flex-col flex-wrap items-center justify-center gap-4 md:flex-row md:items-start md:gap-8">
+      <div className="flex w-full flex-col flex-wrap items-center justify-center gap-4 md:flex-row md:items-start md:justify-around md:gap-8">
         {PROJECTS_INFO.map(({ id, name, description, image, link, techs }) => (
           <ProjectCard
             key={id}

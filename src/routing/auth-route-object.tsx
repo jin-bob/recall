@@ -1,9 +1,11 @@
-import { Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { Outlet, type RouteObject } from 'react-router';
 import { Skeleton } from '@/components/ui/skeleton.tsx';
 import ROUTE_PATHS from '@/constants/route-paths.ts';
 import PublicRoute from '@/routing/public-route.tsx';
 import AuthLayout from '@/layouts/auth';
+
+const SignInPage = lazy(() => import('@/pages/sign-in'));
 
 const AUTH_ROUTE_OBJECT: RouteObject = {
   path: ROUTE_PATHS.auth,
@@ -24,7 +26,7 @@ const AUTH_ROUTE_OBJECT: RouteObject = {
           key={ROUTE_PATHS.auth}
           fallback={<Skeleton className="h-full w-full" />}
         >
-          <div>SignInPage</div>
+          <SignInPage />
         </Suspense>
       ),
     },

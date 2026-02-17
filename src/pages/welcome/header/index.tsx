@@ -4,6 +4,7 @@ import Logo from '@/assets/icons/logo.svg?react';
 import { buttonVariants } from '@/components/ui/button.tsx';
 import ThemeDropdown from '@/components/theme-dropdown';
 import ROUTE_PATHS from '@/constants/route-paths.ts';
+import LoginButton from '@/components/login-button';
 import { cn } from '@/lib/utils.ts';
 
 export default function Header() {
@@ -25,6 +26,10 @@ export default function Header() {
 
           <span className="hidden md:block">Dashboard</span>
         </Link>
+
+        <div>
+          <LoginButton />
+        </div>
 
         <div className="flex items-center justify-center text-white">
           <ThemeDropdown />

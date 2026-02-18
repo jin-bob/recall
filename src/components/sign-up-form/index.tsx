@@ -1,6 +1,6 @@
 import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import signInSchema from '@/components/sign-in-form/sign-in-schema.ts';
+import signUpSchema from '@/components/sign-up-form/sign-up-schema.ts';
 import {
   Field,
   FieldError,
@@ -12,18 +12,19 @@ import InputPassword from '@/components/input-password';
 import ButtonLoader from '@/components/button-loader.tsx';
 import AlertDestructive from '@/components/alert-destructive.tsx';
 import FORM_KEYS from '@/constants/form.ts';
-import useSignInMutation from '@/lib/tanstack-query/mutations/sign-in-mutation.ts';
+import useSignUpMutation from '@/lib/tanstack-query/mutations/sign-up-mutation.ts';
 
-export default function SignInForm() {
+export default function SignUpForm() {
   const form = useForm({
-    resolver: zodResolver(signInSchema),
+    resolver: zodResolver(signUpSchema),
     defaultValues: {
       email: '',
       password: '',
+      confirmPassword: '',
     },
   });
 
-  const { mutate, error, isPending } = useSignInMutation();
+  const { mutate, error, isPending } = useSignUpMutation();
 
   const onSubmit = form.handleSubmit((values) => {
     mutate(values);
@@ -65,6 +66,23 @@ export default function SignInForm() {
             </Field>
           )}
         />
+
+        <Controller
+          name={FORM_KEYS.confirmPassword}
+          control={form.control}
+          render={({ field, fieldState }) => (
+            <Field>
+              <FieldLabel htmlFor={field.name}>Confirm Password</FieldLabel>
+              <InputPassword
+                id={field.name}
+                placeholder={field.name}
+                {...field}
+                className="bg-background h-8"
+              />
+              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+            </Field>
+          )}
+        />
       </FieldGroup>
 
       <div className="pt-3">
@@ -74,7 +92,7 @@ export default function SignInForm() {
           disabled={isPending}
           isLoading={isPending}
         >
-          Log In
+          Sign Up
         </ButtonLoader>
       </div>
 

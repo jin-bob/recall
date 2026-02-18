@@ -1,17 +1,17 @@
 import { Link } from 'react-router';
-import SignInForm from '@/components/sign-in-form';
+import SignUpForm from '@/components/sign-up-form';
 import ROUTE_PATHS from '@/constants/route-paths.ts';
 
-export default function SignInPage() {
+export default function SignUpPage() {
   return (
     <div className="w-full">
       <div className="space-y-4 px-3 pt-3 text-center md:px-5 md:pt-10">
-        <div className="text-2xl">Hi, login to your existent account.</div>
+        <div className="text-2xl">Create your account</div>
 
-        <SignInForm />
+        <SignUpForm />
 
         <div>
-          <Link to={ROUTE_PATHS.signUp}>Sign-up</Link>
+          <Link to={ROUTE_PATHS.auth}>Sign-in</Link>
         </div>
       </div>
     </div>

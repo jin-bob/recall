@@ -6,6 +6,7 @@ import PublicRoute from '@/routing/public-route.tsx';
 import AuthLayout from '@/layouts/auth';
 
 const SignInPage = lazy(() => import('@/pages/sign-in'));
+const SignUpPage = lazy(() => import('@/pages/sign-up'));
 
 const AUTH_ROUTE_OBJECT: RouteObject = {
   path: ROUTE_PATHS.auth,
@@ -37,7 +38,7 @@ const AUTH_ROUTE_OBJECT: RouteObject = {
           key={ROUTE_PATHS.signUp}
           fallback={<Skeleton className="h-full w-full" />}
         >
-          <div>SignUpPage</div>
+          <SignUpPage />
         </Suspense>
       ),
     },

@@ -5,6 +5,7 @@ import ROUTE_PATHS from '@/constants/route-paths.ts';
 import PrivateRoute from '@/routing/private-route.tsx';
 
 const AdminLayout = lazy(() => import('@/layouts/admin'));
+const DashboardPage = lazy(() => import('@/pages/dashboard'));
 
 const ADMIN_ROUTE_OBJECT: RouteObject = {
   path: ROUTE_PATHS.admin,
@@ -26,7 +27,7 @@ const ADMIN_ROUTE_OBJECT: RouteObject = {
           key={ROUTE_PATHS.admin}
           fallback={<Skeleton className="h-full w-full" />}
         >
-          <div>Dashboard</div>
+          <DashboardPage />
         </Suspense>
       ),
     },

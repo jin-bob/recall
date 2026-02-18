@@ -7,7 +7,7 @@ export default function AdminLayout({ children }: PropsWithChildren) {
     <div className="flex min-h-dvh flex-col">
       <Header />
 
-      <main className="flex-1">{children}</main>
+      <main className="mx-auto flex-1 px-3 md:px-5">{children}</main>
 
       <Footer />
     </div>

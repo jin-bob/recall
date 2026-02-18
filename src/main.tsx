@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { RouterProvider } from 'react-router';
 import { createRoot } from 'react-dom/client';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClientProvider } from '@tanstack/react-query';
 import ThemeProvider from '@/context/theme/theme-provider.tsx';
 import queryClient from '@/lib/tanstack-query/query-client.ts';
@@ -14,6 +15,8 @@ createRoot(document.getElementById('root')!).render(
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
         <span style={{ display: 'none' }} data-version={packageJson.version} />
+
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </ThemeProvider>
   </StrictMode>

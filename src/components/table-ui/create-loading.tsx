@@ -1,6 +1,6 @@
 import type { RowData, TableOptions } from '@tanstack/react-table';
-import range from 'lodash-es/range';
 import { Skeleton } from '@/components/ui/skeleton.tsx';
+import range from '@/helpers/range.ts';
 
 type CreateLoadingOptions<TData extends RowData> = {
   isLoading: boolean;

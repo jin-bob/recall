@@ -1,3 +1,8 @@
+import Futurepedia from '@/assets/project-logos/futurepedia-logo.svg';
+import Shutterstock from '@/assets/project-logos/shutterstock-logo.svg';
+import Marvelous from '@/assets/project-logos/marvelous-logo.svg';
+import Skybox from '@/assets/project-logos/skybox-logo.svg';
+
 import ProjectCard from '@/pages/welcome/projects-section/project-card.tsx';
 
 const PROJECTS_INFO = [
@@ -6,7 +11,7 @@ const PROJECTS_INFO = [
     name: 'ShutterStock',
     description:
       'Shutterstock is a leading global provider of high-quality licensed images, videos, and music.',
-    image: 'shutterstock',
+    image: Shutterstock,
     link: 'https://www.shutterstock.com/',
     techs: [
       'NextJS',
@@ -24,7 +29,7 @@ const PROJECTS_INFO = [
     name: 'Marvelous.Works',
     description:
       'Marvelous. works is a sales outreach and collaborative selling platform for media sales teams.',
-    image: 'marvelous',
+    image: Marvelous,
     link: 'https://marvelous.works/',
     techs: [
       'TanStack Query',
@@ -49,7 +54,7 @@ const PROJECTS_INFO = [
     name: 'SkyBox',
     description:
       'Startup, platform for Instagram and Tik-Tok influencers and companies.',
-    image: 'skybox',
+    image: Skybox,
     techs: [
       'TypeScript',
       'Tailwind CSS',
@@ -70,7 +75,7 @@ const PROJECTS_INFO = [
     name: 'Futurepedia',
     description:
       'Futurepedia is an online platform focused on helping people and businesses discover, learn about, and use AI tools and technologies.',
-    image: 'futurepedia',
+    image: Futurepedia,
     link: 'https://www.futurepedia.io/',
     techs: [
       'TypeScript',

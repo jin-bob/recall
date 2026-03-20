@@ -1,3 +1,5 @@
+import Avatar from '@/assets/avatar.webp';
+
 export default function InfoSection() {
   return (
     <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:items-start md:justify-between">
@@ -36,9 +38,10 @@ export default function InfoSection() {
         className="transition hover:saturate-75"
       >
         <img
-          src="src/assets/avatar.webp"
+          src={Avatar}
           alt="avatar"
           className="size-[256px] rounded-full"
+          fetchPriority="high"
         />
       </a>
     </div>

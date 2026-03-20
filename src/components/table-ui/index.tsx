@@ -43,7 +43,7 @@ export default function TableUI<TData extends RowData>({
   const width = table.getTotalSize();
 
   return (
-    <Table className="table-fixed" style={{ width }}>
+    <Table className="mx-5 table-fixed" style={{ width }}>
       <TableHeader>
         {table.getHeaderGroups().map((headerGroup) => (
           <TableRow key={headerGroup.id}>

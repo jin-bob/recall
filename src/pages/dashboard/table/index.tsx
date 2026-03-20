@@ -23,7 +23,7 @@ export default function Table() {
   );
 
   return (
-    <div className="w-full max-w-[calc(100dvw-40px)] overflow-y-auto rounded-md border px-5">
+    <div className="mx-auto box-content w-full max-w-[1300px] overflow-y-auto rounded-md border">
       <TableUI
         className="h-[79px]"
         isLoading={isLoading}

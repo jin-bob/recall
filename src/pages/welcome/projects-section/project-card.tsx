@@ -48,10 +48,11 @@ export default function ProjectCard({
       <CardContent className="flex flex-1 flex-col items-center gap-1">
         <p className="flex-1 text-start">{content}</p>
         <img
-          src={`src/assets/project-logos/${image}-logo.svg`}
+          src={image}
           alt="project-image"
           className="max-w-[240px]"
-        ></img>
+          loading="lazy"
+        />
       </CardContent>
       <ProjectCardFooter techs={techs} />
     </Card>
